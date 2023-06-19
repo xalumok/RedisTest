@@ -7,7 +7,7 @@ class RedisPublisher:
 
     def __init__(self) -> None:
         
-        self.message = str(input("Enter publisher's message: "))
+        #self.message = str(input("Enter publisher's message: "))
         self.redis_client = redis.Redis(host='127.0.0.1',port=6379,decode_responses=True)
         
     async def spam(self):
@@ -15,7 +15,7 @@ class RedisPublisher:
 
             for i in range(0,100):
                 self.redis_client.publish('Creep', f'{time.time()}')
-                print(f'Sent message {self.message} at: {time.time()}')
+                #print(f'Sent message at: {time.time()}')
             await asyncio.sleep(3)
 
 async def main():
