@@ -12,6 +12,7 @@ class RedisSubscriber:
 
         redis_sub = redis_pub.pubsub()
         redis_sub.subscribe('Creep')
+        #print(f'Subscribed at: {time.time()}')
 
         for message in redis_sub.listen():
             print(f"Got message: {message} at {time.time()}")
