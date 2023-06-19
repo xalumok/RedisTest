@@ -14,7 +14,7 @@ class RedisPublisher:
         while(True):
 
             for i in range(0,100):
-                self.redis_client.publish('Creep', f'{self.message}[{i}]')
+                self.redis_client.publish('Creep', f'{time.time()}')
                 print(f'Sent message {self.message} at: {time.time()}')
             await asyncio.sleep(3)
 

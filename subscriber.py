@@ -8,14 +8,12 @@ class RedisSubscriber:
 
         redis_pub = redis.Redis(host='127.0.0.1',port=6379,decode_responses=True)
         
-        self.publishers = []
-
         redis_sub = redis_pub.pubsub()
         redis_sub.subscribe('Creep')
         #print(f'Subscribed at: {time.time()}')
 
         for message in redis_sub.listen():
-            print(f"Got message: {message} at {time.time()}")
+            print(f"Got message: {message} delay: {time.time() - int(message)}")
 
 def main():
     sub = RedisSubscriber()
