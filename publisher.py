@@ -20,3 +20,6 @@ class RedisPublisher:
 
 async def main():
     pub = RedisPublisher()
+    await pub.spam()
+
+run(main())

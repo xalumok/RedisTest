@@ -19,3 +19,5 @@ class RedisSubscriber:
 
 def main():
     sub = RedisSubscriber()
+
+run(main())
