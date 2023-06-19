@@ -13,7 +13,7 @@ class RedisSubscriber:
         #print(f'Subscribed at: {time.time()}')
 
         for message in redis_sub.listen():
-            print(f"Got message: {message} delay: {time.time() - int(message)}")
+            print(f"Got message. delay: {time.time() - float(message)}")
 
 def main():
     sub = RedisSubscriber()
